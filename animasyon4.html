@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>döndürme animasyonu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <style>
+    body{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+     .container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    h2::before{
+        display: block;
+        content: "";
+        width: 110px;
+        height: 1px;
+        background-color: black;
+        margin-bottom: 10px;
+       
+    }
+    span{
+       font-size: 30px;
+        font-weight: 600;
+        display: block;
+       
+       
+    }
+    .box{
+        width: 300px;
+        height: 300px;
+      
+        transition: 300ms all;
+        position: relative;
+       
+    }
+    .loadmore{
+        background-color: bisque;
+        padding: 40px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        left: 0;
+        top: 0;
+        position: absolute;
+        backface-visibility: hidden;
+        transition: 300ms all;
+        transform: rotatey(0deg);
+        
+
+    }
+    .mywork{
+        background-color: #afa376;
+        padding: 40px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        left: 0;
+        top: 0;
+        position: absolute;
+        backface-visibility: hidden;
+        transition: 300ms all;
+        transform: rotatey(180deg);
+        
+
+    }
+    .box:hover .mywork{
+        transform: perspective(400px) rotatey(0deg);
+    }
+    .box:hover .loadmore{
+        transform:perspective(400px) rotatey(180deg);
+    }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="loadmore">
+                <h2>LOAD <span>MORE</span>
+
+
+                </h2>
+            </div>
+            <div class="mywork">
+                <h2>MY <span>WORK</span>
+
+
+                </h2>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>
